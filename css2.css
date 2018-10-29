@@ -1,0 +1,31 @@
+@charset "utf-8";
+td,th,p{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+	line-height: 1.5;
+}
+ul, li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	color: #333;
+}
+a img{
+	border: none 0px #fff;
+}
+h2, h3, h4, h5, h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 0.3em;
+}
+@mixin button {
+    background-color: #9E3314;
+    color: #fff;
+    /*color: #2B2B2B;*/
+    display: inline-block;
+    font-size: 1rem;
+    padding: 10px 30px 10px;
+    margin: 3px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px; 
+}

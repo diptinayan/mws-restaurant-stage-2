@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+@import 'css2.css';
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    #restaurant-hours {
+        max-width: calc(50% - 20px);
+        padding: 0 10px;
+        order: 4;
+        margin-bottom: unset;
+    }
+    #restaurant-img {
+        max-width: 50%;
+        margin-top: auto;
+        margin-bottom: auto;
+        order: 3;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 959px) {
+    body {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #map {
+        width: 800px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #content, #map {
+        height: calc(100vh - 148px - 30px - 0.7rem); 
+    }
+    #content {
+        width: 40vw;
+        overflow: scroll;
+    }
+    #map {
+        width: 60vw;
+        position: absolute;
+        overflow: hidden;
+        top: 148px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    body {
+        overflow: hidden; 
+    }    
+}
+
+@media screen and (min-width: 1800px) {
+    body {
+        width: 1800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #content {
+        width: 720px;
+    }
+    #map {
+        width: 1080px;
+    }
+}
