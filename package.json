@@ -1,25 +1,50 @@
 {
   "name": "Restaurant-Reviews",
   "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
+  "version": "1.0.0",
+  "description": "Restaurant Review App-Stage 2",
   "keywords": [],
   "dependencies": {
-    "include-all": "^1.0.0",
-    "rc": "1.0.1",
-    "sails": "^0.12.13",
-    "sails-disk": "~0.10.9"
+    idb": "^2.1.1",
+    "intersection-observer": "^0.5.0"
+  },
+  "bugs": {
+    "url": "https://github.com/diptinayan/mws-restaurant-stage-2/issues"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.0",
+    "del": "^3.0.0",
+    "fancy-log": "^1.3.2",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "latest",
+    "gulp-eslint": "^4.0.2",
+    "gulp-gzip": "^1.4.2",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-responsive": "^2.10.0",
+    "gulp-rollup": "^2.16.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify-es": "^1.0.1",
+    "minimist": "^1.2.0",
+    "rollup": "^0.58.2",
+    "rollup-plugin-commonjs": "^8.4.1",
+    "rollup-plugin-node-resolve": "^3.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diptinayan/mws-restaurant-stage-2.git"
   },
   "scripts": {
-    "debug": "node debug app.js",
-    "start": "node app.js"
+     "serve": "http-server build -c 86400 -g",
+    "build": "gulp --compress true"
   },
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/brandy/Restaurant-Reviews.git"
+    "url": "git://github.com/diptinayan/Restaurant-Reviews.git"
   },
-  "author": "Brandy Lee Camacho",
-  "linkedIn": "https://www.linkedin.com/in/brandycamacho/",
-  "email": "brandy@udacity.com"
+ 
 }
