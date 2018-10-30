@@ -1,6 +1,0 @@
-/* = Restaurants list =*/
-@media screen and (min-width: 1000px) {
-    #restaurants-list {
-        grid-template-columns:  repeat(4, 22vw);
-    }
-}
