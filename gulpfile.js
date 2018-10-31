@@ -157,8 +157,8 @@ gulp.task('attach', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('css1/**/*.css', gulp.series(['css:process']));
-  gulp.watch('js1/**/*.js', gulp.series(['js:copy']))
+  gulp.watch('css/**/*.css', gulp.series(['css:process']));
+  gulp.watch('js/**/*.js', gulp.series(['js:copy']))
     .on('change', function (path) {
       log('File ' + path + ' was changed');
     });

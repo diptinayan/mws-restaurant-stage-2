@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preload" href="css/details2.css" as="style">
+  <link rel="preload" href="css/details.css" as="style" media="screen and (min-width: 600px)">
+
+  <meta name="theme-color" content="#252831"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <style>
+    html {
+      font-size: 16px;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+      line-height: 1.2;
+      background-color: #fdfdfd;
+      margin: 0;
+      position: relative;
+    }
+    a {
+      color: #9E3314;
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      color: #3397db;
+      text-decoration: none;
+    }
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0 0.3em;
+    }
+    footer,
+    header,
+    nav,
+    section {
+      display: block;
+    }
+    #breadcrumb {
+      padding: 10px 15px;
+      list-style: none;
+      background-color: #eee;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    /* Display list items side by side */
+    #breadcrumb li {
+      display: inline;
+    }
+    
+    #breadcrumb li a {
+      color: #165C92;
+      text-decoration: none;
+    }
+    #maincontent {
+      background-color: #f3f3f3;
+      min-height: 100%;
+      max-width: 100%;
+    }
+    footer#footer {
+      background-color: #444;
+      color: #D9D9D9;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      padding: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      max-width: 100%;
+    }
+    footer#footer a {
+      color: whitesmoke;
+    }
+    #toggle-map {
+      background-color: #9E3314;
+      color: #fff;
+      display: block;
+      font-size: 1rem;
+      padding: 10px 30px 10px;
+      margin: 3.5px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-radius: 5px;
+      border: unset;
+      float: right;
+    }
+    nav {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      background-color: #252831;
+      text-align: center;
+    }
+    nav h1 {
+      margin: auto;
+    }
+    nav h1 a {
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 200;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+    }
+    #map {
+      height: 400px;
+      width: 100vw;
+      background-color: #ccc;
+    }
+    #map-container {
+      display: none;
+    }
+    #maincontent {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #restaurant-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #toggle-container {
+      max-width: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <link rel="stylesheet" href="css/details2.css">
+  <link rel="stylesheet" href="css/details.css" media="screen and (min-width: 600px)">
+
+
+  <title>Restaurant Info</title>
+
+</head>
+
+<body>
+  <header>
+    <a href="#maincontent" class="skip-link">Skip to main content</a>
+    <nav>
+      <h1>
+        <a href="/">Restaurant Reviews</a>
+      </h1>
+    </nav>
+    <ol id="breadcrumb" aria-label="Breadcrumb" role="navigation">
+      <li>
+        <a href="/">Home</a>
+      </li>
+    </ol>
+  </header>
+
+  <main id="maincontent" tabindex="-1">
+    <section id="map-container">
+      <div id="map" role="application" aria-label="Google map with the restaurant location"></div>
+    </section>
+
+
+    <div id="content">
+      <section id="restaurant-container">
+        <div id="toggle-container">
+          <button id="toggle-map" onclick="toggleMap()">Show on Map</button>
+        </div>
+        <h2 id="restaurant-name"></h2>
+        <p id="restaurant-address"></p>
+        <p id="restaurant-cuisine"></p>
+
+        <table id="restaurant-hours"></table>
+        <img id="restaurant-img">
+      </section>
+
+      <section id="reviews-container">
+        <ul id="reviews-list"></ul>
+      </section>
+    </div>
+
+  </main>
+
+  <footer id="footer">
+    Copyright (c) 2017
+    <a href="/">
+      <strong>Restaurant Reviews</strong>
+    </a> All Rights Reserved.
+  </footer>
+
+
+  <script async defer type="module" charset="utf-8" src="js/info.js"></script>
+  <script>
+    function toggleMap() {
+      window.addGMapsToDom();
+      const opened = !!self.opened;
+      const newStyle = (opened === true) ? 'display:none;' : 'display:inline-block;';
+      document.getElementById('map-container').style = newStyle;
+      document.getElementById('toggle-map').innerText = (opened === true) ? 'Show on Map' : 'Close Map';
+      self.opened = !opened;
+    }
+  </script>
+
+</body>
+
+</html>
